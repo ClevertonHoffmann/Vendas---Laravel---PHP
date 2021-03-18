@@ -27,5 +27,11 @@
     @yield('clientes')
     @yield('clientesedit')
     @yield('clientesshow')
+
+    @yield('menuvenindx')
+    @yield('menuvendedores')
+    @yield('vendedores')
+    @yield('vendedoresedit')
+    @yield('vendedoresshow')
 </body>
 </html>

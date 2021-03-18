@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Models;
+namespace App\http;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Vendedores extends Model
 {
-    use HasFactory;
+    protected $primaryKey = 'cod';
+    public $incrementing = false;
+    protected $fillable = ['cod','nome','cpf'];
 }

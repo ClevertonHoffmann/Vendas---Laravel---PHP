@@ -1,31 +1,26 @@
 @extends('base')
 
-@section('enderecos')
+@section('vendedores')
 <body style="margin: 20px">
-    <form action="{{route('enderecos.store')}}" method='post'>
+    <form action="{{route('vendedores.store')}}" method='post'>
         @csrf
         @method('POST')
-        <h2 style="text-align:center">Inserção de novos enderecos</h2>
+        <h2 style="text-align:center">Inserção de novos vendedores</h2>
         <br><br>
         <div class="row">
             <div id="id" class="col-lg-2">
-                <legend> CEP </legend>
-                <input name="cep" type="text" id="cep" placeholder="CEP...">
+                <legend> COD </legend>
+                <input name="cod" type="text" id="cod" placeholder="COD...">
             </div>
             <br><br>
-            <div id="bairro" class="col-lg-2">
-                <legend> Bairro</legend>
-                <input name="bairro" type="text" id="bairro" placeholder="BAIRRO...">
+            <div id="nome" class="col-lg-2">
+                <legend> Nome</legend>
+                <input name="nome" type="text" id="nome" placeholder="NOME...">
                 <br><br>
             </div>
-            <div id="rua" class="col-lg-2">
-                <legend> Rua</legend>
-                <input name="rua" type="text" id="rua" placeholder="RUA...">
-                <br><br>
-            </div>
-            <div id="cidade" class="col-lg-2">
-                <legend> Cidade</legend>
-                <input name="cidade" type="text" id="cidade" placeholder="CIDADE...">
+            <div id="cpf" class="col-lg-2">
+                <legend> CPF</legend>
+                <input name="cpf" type="text" id="cpf" placeholder="CPF...">
                 <br><br>
             </div>
         </div>

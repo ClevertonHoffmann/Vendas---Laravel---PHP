@@ -22,4 +22,10 @@
         <button onclick="location.href='clientes'" type="button" class="btn btn-primary btn-block">Tela de clientes</button>
         <br>
 </div>
+<div style="text-align:center">
+        @csrf
+        @method('GET')
+        <button onclick="location.href='vendedores'" type="button" class="btn btn-primary btn-block">Tela de vendedores</button>
+        <br>
+</div>
 @endsection

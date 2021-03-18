@@ -1,17 +1,17 @@
 @extends('base')
 
-@section('enderecosshow')
+@section('vendedoresshow')
 
 <body style="margin: 20px">
-    <form method='post' action="/Enderecos/enderecos/busca">
+    <form method='post' action="/Vendedores/vendedores/busca">
         @csrf
         @method('GET')
         <h2 style="text-align:center">Busca item em específico por descrição</h2>
         <br><br>
         <div class="row">
-            <div id="tccep" class="col-lg-2">
-                <legend> CEP</legend>
-                <input name="cep" type="text" id="cep" placeholder="CEP...">
+            <div id="tccod" class="col-lg-2">
+                <legend> cod</legend>
+                <input name="cod" type="text" id="cod" placeholder="cod...">
                 <br><br>
             </div>
         </div>
@@ -22,7 +22,7 @@
 <table class="table table-bordered">
     <tbody>
         <tr>
-            <th id="th1">CEP</th>
+            <th id="th1">cod</th>
             <p>
                 <th id="th2">BAIRRO</th>
             <p>
@@ -31,31 +31,25 @@
                 <th id="th4">CIDADE</th>
             <p>
         </tr>
-        @if(isset($enderecos->cep))
-                @if(isset($enderecos))
-                    <tr id="linha{{ $enderecos->cep }}">
-                            <td id="td1">{{ $enderecos->cep }}</td>
+        @if(isset($vendedores->cod))
+                @if(isset($vendedores))
+                    <tr id="linha{{ $vendedores->cod }}">
+                            <td id="td1">{{ $vendedores->cod }}</td>
                         <p>
-                            <td id="td2">{{ $enderecos->bairro }}</td>
+                            <td id="td2">{{ $vendedores->nome }}</td>
                         <p>
-                            <td id="td3">{{ $enderecos->rua }}</td>
-                        <p>
-                            <td id="td4">{{ $enderecos->cidade }}</td>
-                        <p>
+                            <td id="td3">{{ $vendedores->cpf }}</td>
                     </tr>
                 @endif
         @else
-                @if(isset($enderecos))
-                @foreach($enderecos as $endereco)
-                    <tr id="linha{{ $endereco->cep }}">
-                            <td id="td1">{{ $endereco->cep }}</td>
+                @if(isset($vendedores))
+                @foreach($vendedores as $endereco)
+                    <tr id="linha{{ $endereco->cod }}">
+                            <td id="td1">{{ $endereco->cod }}</td>
                         <p>
-                            <td id="td2">{{ $endereco->bairro }}</td>
+                            <td id="td2">{{ $endereco->nome }}</td>
                         <p>
-                            <td id="td3">{{ $endereco->rua }}</td>
-                        <p>
-                            <td id="td4">{{ $endereco->cidade }}</td>
-                        <p>
+                            <td id="td3">{{ $endereco->cpf }}</td>
                     </tr>
                 @endforeach
                 @endif
